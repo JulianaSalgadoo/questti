@@ -1,0 +1,120 @@
+create database simulado;
+use simulado;
+
+create table disciplina(
+id int auto_increment primary key,
+disciplina varchar(100) not null
+);
+
+create table questoes(
+questoes_id int auto_increment primary key,
+questao_text text not null,
+disciplina_id int,
+foreign key (disciplina_id) references disciplina(id)
+);
+
+insert into disciplina (disciplina) values
+('Lógica de Programação');
+
+insert into questoes (questao_text, disciplina_id) values 
+('Questão Q2460962 | Algoritmos e Estrutura de Dados, Lógicas de Programação, Ano: 2023, Banca: Instituto Referência, Órgão: SEROPREVI - RJ, Prova: Instituto Referência - 2023 - SEROPREVI - RJ - Analista de Sistemas
+Analise e responda. I- + (mais). II- ou. III- não. IV- < (menor). V- = (igual). São operadores lógicos:', 1), 
+('Questão Q2460962 | Algoritmos e Estrutura de Dados, Lógicas de Programação, Ano: 2023, Banca: Instituto Referência, Órgão: SEROPREVI - RJ, Prova: Instituto Referência - 2023 - SEROPREVI - RJ - Analista de Sistemas
+Analise e responda. I- + (mais). II- ou. III- não. IV- < (menor). V- = (igual). São operadores lógicos:', 1),
+('Analise as informações a seguir:I. É correto afirmar que algoritmo é todo conjunto de regras e conceitos necessários para criar códigos que serão interpretados e executados por um computador.
+ II. É correto afirmar que lógica de programação é uma sequência lógica de ações cujo objetivo é resolver um problema.Marque a alternativa CORRETA:', 1),
+('Avalie se, no contexto da lógica de programação, as etapas para o desenvolvimento de um programa a seguir estão corretamente descritas:
+ Estuda-se o enunciado do problema para definir os dados de entrada, o processamento e os dados de saída.
+ Usa-se fluxogramas ou português estruturado para descrever o problema com suas soluções.(   ) O algoritmo é transformado em códigos da linguagem de programação escolhida para se trabalhar.
+Está correto o que se afirma em', 1),
+('Assinale a opção que apresenta a representação correta de instruções, em pseudocódigo tipado, para definir uma variável e modificar e imprimir seu conteúdo em uma saída.', 1);
+
+insert into escolha (quest_id, escolha_text, is_correct) values
+(1, 'a) II e III, apenas.', true),
+(1, 'b) I, II, III, IV e V.', false),
+(1, 'c) III, IV e V, apenas.', false),
+(1, 'd) I, II e IV, apenas.', false),
+(2, 'a) A atribuição da variável “media” deve ser movida para dentro do laço de repetição “para”.', false),
+(2, 'b) O tipo da variável “media” deve ser alterado para “real”.', true),
+(2, 'c) A instrução “escreva (media)” deve ser movida para cima da atribuição da variável “media”.', false),
+(2, 'd) A variável “cont” deve ser inicializada antes do laço de repetição “para”.', false),
+(2, 'e) O operador de divisão “/” (barra) deve ser alterado para “%” (percentual).', false),
+(3, 'As duas afirmativas são verdadeiras.', false),
+(3, 'A afirmativa I é verdadeira, e a II é falsa.', false),
+(3, 'A afirmativa II é verdadeira, e a I é falsa. ', false),
+(3, 'As duas afirmativas são falsas.', true),
+(4,'I, II e III.', true),
+(4, 'I e III, apenas.', false),
+(4, 'II e III, apenas.', false),
+(4, 'I e II, apenas.', false),
+(4, 'I, apenas.', false),
+(5, 'variavel = 0;
+variavel = 1 + 2;
+imprime(variavel);', false),
+(5, 'inteiro variavel = 0;
+variavel = 1 + 2;
+imprime(inteiro)', false),
+(5, 'inteiro variavel = 0;
+variavel = "1" + "2";
+imprime(variavel);', false),
+(5, 'inteiro variavel = 0;
+variavel = 1 + 2;
+imprime(variavel);', true),
+(5, 'inteiro variavel = "0";
+variavel = 1 + 2;
+imprime(variavel);', false);
+
+insert into disciplina (disciplina) values
+('Banco de Dados');
+
+insert into questoes (questao_text, disciplina_id) values 
+('Questão 117140 | Banco de Dados, Modelo relacional, Analista de Sistemas, BADESC, FGV, Ensino Médio
+Os conceitos que envolvem os termos restrição de integridade de entidade e restrição de integridade referencial são, respectivamente:', 2),
+('Questão 168960 | Banco de Dados, Banco de Dados, Auditor Fiscal da Receita Estadual, SEFAZ SC, FCC, Ensino Médio
+No âmbito da ciência de dados na definição de Big Data, utilizam-se características ou atributos que alguns pesquisadores adotam como sendo os cinco Vs.
+Porém, a base necessária para o reconhecimento de Big Data é formada por três propriedades:', 2),
+('Questão 265216 | Banco de Dados, Oracle, Técnico Judiciário Tecnologia da Informação, TRT 22a Região, FCC, Ensino Médio
+No Oracle 11g é um tipo de dados que sempre será NOT NULL e mais rápido que o PLS_INTERGER:', 2),
+('Questão 264716 | Banco de Dados, SQL, Técnico Judiciário Tecnologia da Informação, TRT 5a Região, CESPE,
+Acerca de SQL e seus principais comandos, julgue os itens subseqüentes, desprezando, quando for o caso, a existência da quebra de linha na linha dos comandos SQL.
+O comando SELECT DISTINCT Primeiro_nome FROM consumidor retorna todos os registros Primeiro_nome não repetidos da tabela consumidor.', 2),
+('Questão 194145 | Banco de Dados, SGBD Sistema de Gerenciamento de Banco de Dados, Agente Técnico Legislativo Especializado Admin e Arquitetura de Dados, AL SP, FCC, Ensino Médio
+Num sistema de banco de dados, todo acesso às informações é gerenciado pelo componente conhecido por', 2);
+
+insert into escolha (quest_id, escolha_text, is_correct) values
+(6, 'a) nenhum atributo pertencente à chave primária poderá receber valor NULL / os valores dos atributos que formam a chave estrangeira deverá existir na tabela 
+onde a chave estrangeira é chave primária, quando for diferente de NULL.', true),
+(6, 'b) os valores dos atributos que formam a chave estrangeira deverá existir na tabela onde a chave estrangeira é chave primária, quando for diferente de NULL /
+ nenhum atributo pertencente à chave primária poderá receber valor NULL.', false),
+(6, 'c) nenhum atributo pertencente à chave primária poderá receber valor NULL / os valores dos atributos que formam a chave estrangeira deverá existir na tabela
+ onde a chave estrangeira é chave primária, somente quando for igual a NULL.', false),
+(6, 'd) os valores dos atributos que formam a chave estrangeira deverá existir na tabela onde a chave estrangeira é chave primária, somente quando for igual a NULL /
+ nenhum atributo pertencente à chave primária poderá receber valor NULL.', false),
+(6, 'e) os atributos pertencentes à chave primária deverão conter sempre valores diferentes de NULL / os valores dos atributos que formam a chave estrangeira deverá 
+existir na tabela onde a chave estrangeira é chave primária, somente quando for igual a NULL1.', false),
+(7, 'a) valor, velocidade e volume.', false),
+(7, 'b) valor, veracidade e volume.', false),
+(7, 'c) variedade, velocidade e volume.', true),
+(7, 'd) variedade, valor e volume.', false),
+(7, 'e) velocidade, veracidade e volume1.', false),
+(8,'a) number not_null.', false),
+(8,'b) smallint.', false),
+(8,'c) timestamp.', false),
+(8,'d) simple_integer datatype.', true),
+(8,'e) urowid1.', false),
+(9,'Certo', true),
+(9,'Errado', false),
+(10,'a) Data Warehouse.',  false),
+(10,'b) Data Mining', false),
+(10,'c) JOIN.', false),
+(10,'d) DBMS/SGBD.', true),
+(10,'e) DDL.', false);
+
+
+create table escolha(
+id int auto_increment primary key,
+quest_id int,
+escolha_text varchar(255) not null,
+is_correct boolean,
+foreign key (quest_id) references questoes(questoes_id)
+);
